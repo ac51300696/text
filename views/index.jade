@@ -1,5 +1,13 @@
 extends layout
 
+block page 
+  - var meau = 'index'
 block content
-  h1= title
-  p Welcome to #{title}
+  if (articles.length ===0)
+    |木有文章或者你没有权限请登录
+    a(href="/login") Login
+  else
+    each article, index in articles
+      div
+        h2
+          a(href="/articles/#{articles.slug}")= article.title
