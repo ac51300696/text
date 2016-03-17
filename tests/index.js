@@ -1,7 +1,7 @@
-var text_app = require("../app"),
-    var boot = text_app.boot,
-        shotdown = text_app.shotdown,
-        port = text_app.port,
+var text_app = require("../bin/www");
+    boot = text_app.boot;
+        shutdown = text_app.shutdown;
+        port = text_app.port;
         superagent = require("superagent"),
         expect = require("expect.js");
 describe("server", function() {
@@ -21,5 +21,4 @@ describe("homepage", function() {
 });
 after(function() {
 shutdown()
-});
 });

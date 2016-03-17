@@ -1,12 +1,17 @@
 #!/usr/bin/env node
 var debug = require('debug')('my-application');
 var app = require('../app');
-
-app.set('port', process.env.PORT || 3000);
-
-var server = app.listen(app.get('port'), function() {
-  debug('Express server listening on port ' + server.address().port);
-});
+var http =require('http');
+app.set('port',  3000);
+var server =http.createServer(app);
+var boot = function () {
+	server.listen(app.get('port'),function () {
+	 	 debug('Express server listening on port ' + server.address().port);
+	 }) 
+}
+// var server = app.listen(app.get('port'), function() {
+//   debug('Express server listening on port ' + server.address().port);
+// });
 var shutdown = function () {
 	 server.close(); 
 }
@@ -15,6 +20,6 @@ if (require.main === module) {
 }else {
 	console.info("Running app as a mouile")
 	exports.boot = boot ;
-	exports.shutdown = shotdown;
+	exports.shutdown = shutdown;
 	exports.port = app.get("port");
 }
