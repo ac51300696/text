@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+exports.article = require('./article');
+exports.user = require('./user');
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'my blog' });
-});
+/*
+ * GET home page.
+ */
 
-module.exports = router;
+exports.index = function(req, res, next){
+  req.collections.articles.find({published: true}, {sort: {_id:-1}}).toArray(function(error, articles){
+    if (error) return next(error);
+    res.render('index', { articles: articles});
+  })
+};
+
+
+

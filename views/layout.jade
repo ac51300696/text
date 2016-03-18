@@ -2,18 +2,20 @@ doctype html
 html
   head
     title= appTitle
-    script(type="text/javascript",src="/js/jQuery.min.js")
-    link(rel='stylesheet', href='/css/bootstrap/dist/css/bootstrap-theme.min.css')
-    link(rel='stylesheet', href='/css/bootstrap/dist/css/bootstrap.min.js')
-    script(type="text/javascript",href='/css/bootstrap/dist/js/bootstrap.min.css')
+    script(type="text/javascript", src="/js/jquery-2.0.3.min.js")
+    link(rel='stylesheet', href='/css/bootstrap-3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-3.0.2/css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='/css/style.css')
-    script(rel='text/javascript', href='/js/common.js')
-    meta(name="viewport",content="width=device-width, initial-scale=1.0")
+    script(type="text/javascript", src="/css/bootstrap-3.0.2/js/bootstrap.min.js")
+    script(type="text/javascript", src="/js/blog.js")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
   body
     #wrap
       .container
         h1.page-header= appTitle
-        p.lead Welcome To My Blog By lxj
+        p.lead Welcome to example from Express.js Experience by&nbsp;
+          a(href='http://twitter.com/azat_co') @azat_co
+          |. Please enjoy.
         block page
         block header
           div
@@ -26,6 +28,6 @@ html
       footer
         .container
           p
-            |手打原创 time：2016年3月17日16:06:41 link：
-            a(href="https://github.com/ac51300696") Github
-            |.
+            | Copyright &copy; 2014 | Issues? Submit to
+            a(href="https://github.com/azat-co/blog-express/issues") GitHub
+            | .
