@@ -1,31 +1,3 @@
-var mongoose = require('mongoose');
-var articleSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        require: true,
-        validate: [function(val) {
-            return val.length <= 120
-        }, "title is too long"],
-        default: "new post"
-    },
-    text: {
-        type: String
-    },
-    published: {
-        type: Boolean,
-        default: false
-    },
-    slug: {
-        type: String,
-        set: function(val) {
-            return val.toLowerCase().replace(" ", "-")
-        }
-    }
-
-})
-articleSchema.static({
-    list: function(callback) {
-        this.find({}, null, { sort: { _id: -1 } }, callback)
-        }
-})
-module.exports = mongoose.model("Articles", articleSchema);
+version https://git-lfs.github.com/spec/v1
+oid sha256:e2d09869bab7043616268073d7cc3495a666522f7735292fd6e15c568248d305
+size 743

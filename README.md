@@ -1,8 +1,3 @@
-# text
-我尝试的个人博客，从2016年3月31日14:24:15开始更新这个更新说明
-base：
-  登陆功能，文章的查删增功能，下一个版本怎加修改功能
-  cookie和session功能， 现在使用基本的，接下来考虑redis
-  发布的时候用ueditor，可上传图片，文字，进行排版等功能
-    time by 2016年3月31日14:26:22
-    
+version https://git-lfs.github.com/spec/v1
+oid sha256:591d815ee6f43eb3d4a9a862b591fdafb91aa5b39aaaad4e481e9d350e3ed3c0
+size 380

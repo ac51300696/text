@@ -1,14 +1,3 @@
-extends layout
-
-block page 
-  - var menu = 'index'
-block content
-  if (articles.length === 0)
-    | There's no published content yet. 
-    a(href="/login") Log in
-    |  to post and publish.
-  else 
-    each article, index in articles
-      div
-        h2
-          a(href="/articles/#{article.slug}")= article.title
+version https://git-lfs.github.com/spec/v1
+oid sha256:3e6d342014943b9496b2aa50108d934e9e72879fce13fa6285cd3ceb14f0b8a2
+size 1469
