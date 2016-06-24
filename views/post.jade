@@ -1,0 +1,32 @@
+extends layout
+block page
+  - var menu = 'post'
+block content
+    script(type="text/javascript", src="/ueditor/ueditor.config.js")
+    script(type="text/javascript", src="/ueditor/ueditor.all.js")
+    script(type="text/javascript", src="/ueditor/lang/zh-cn/zh-cn.js")
+    h2 Post an Article
+    div= error
+    div.col-md-8
+      form(action="/post", method="POST", role="form")
+        div.form-group
+          label(for="title") Title
+         
+          input#title.form-control(name="title", type="text", placeholder="JavaScript is good")
+
+        div.form-group
+          label(for="slug") Slug
+          input#slug.form-control(name="slug", type="text", placeholder="js-good")
+          span.help-block This string will be used in the URL.
+        div.form-group
+          label(for="text") Text
+          script#text( name="text" type="text/plain").
+            初始化
+          //- textarea#text.form-control(rows="5", name="text", placeholder="Text")
+          script.
+            var ue = UE.getEditor('text',{
+            initialFrameHeight: 300, 
+            });
+          
+        p
+          button.btn.btn-primary(type="submit") Save
