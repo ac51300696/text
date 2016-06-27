@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="lxj">
+    <meta name="e_mail" content="ac51300696@gmail.com">
+    <meta name="start_data" content="2016-05-13 17:08:31">
+    <link href="" rel="stylesheet">
+   <style type="text/css">
+.con{width:240px;height:320px;position: relative;overflow: hidden;background-color: #000}
+.con_f:nth-of-type(2n-1){width: 240px;height: 320px;position: absolute;left: 2px;}
+.con_f:nth-of-type(2n){width: 240px;height: 320px;position: absolute;top: 42px;}
+
+.top_c{top: -315px;}
+.right_c{left: 235;}
+.bottom_c{bottom:-315px;}
+.left_c{right:235px;}
+
+.con:hover .con_f{transform:none;width: 100%;height: 100%;top: 0;left: 0;}
+.con_f:hover{ z-index:5;}
+.con_con{display: block;width:240px;height:320px;background-color: #6cf}
+
+
+.top_c .con_con{ transform:translateY(-100%);}
+.bottom_c .con_con{ transform:translateY(100%);}
+.left_c .con_con{ transform:translateX(-100%);}
+.right_c .con_con{ transform:translateX(100%);}
+
+.con_f:hover .con_con{ transform:translateY(0);transition:all .3s linear; transform:translateX(0);}
+</style>
+</head>
+
+<body>
+   <div class="con">
+    <div class="con_f top_c"><a class="con_con"></a></div>
+    <div class="con_f right_c"><a class="con_con"></a></div>
+    <div class="con_f bottom_c"><a class="con_con"></a></div>
+    <div class="con_f left_c"><a class="con_con"></a></div>
+</div>
+
+</body>
+
+</html>
