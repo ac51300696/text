@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e307aaf20c4e40f80b3991dd678f00c1bcffd88973331dc63066db3f2738307e
-size 814
+exports.article = require('./article');
+exports.user = require('./user');
+
+/*
+ * GET home page.
+ */
+
+exports.index = function(req, res, next){
+	//console.log(req.models)
+  req.models.Article.find({published: true},null,{sort: {_id:-1}},function(error, articles){
+     console.log('index')
+    if (error) {return next(error); console.log(error)}
+    res.render('index', { articles: articles});
+
+  })
+};
+
+
+
